@@ -34,8 +34,6 @@ async def ai_tag(file: UploadFile = File(...)):
             HTTP_400_BAD_REQUEST, detail="Only PDF files are accepted."
         )
     print("pdf recieved ....")
-    openai_api_key=settings.OPENAI_API_KEY
-    print("api key =", openai_api_key)
     filename  = file.filename   
     # 2) Read PDF bytes
     pdf_bytes = await file.read()
